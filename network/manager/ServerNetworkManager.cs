@@ -8,7 +8,7 @@ namespace NeoLib.network.manager;
 
 public class ServerNetworkManager
 {
-    private bool _isRunning = true;
+    //private bool _isRunning = true;
     private ServerListener _listener;
     private NetManager _server;
     private const int SleepTime = 15; // 1/66~67
@@ -29,18 +29,20 @@ public class ServerNetworkManager
 
     public void Update()
     {
-        while (_isRunning)
-        {
+        //while (_isRunning)
+        //{
             _server.PollEvents();
-            Thread.Sleep(SleepTime);
-        }
+            //Thread.Sleep(SleepTime);
+        //}
 
-        _server.Stop(true);
-        Console.WriteLine("[SERVER] NetMan stopped!");
+        //_server.Stop(true);
+        //Console.WriteLine("[SERVER] NetMan stopped!");
     }
 
     public void Stop()
     {
-        _isRunning = false;
+        //_isRunning = false;
+        
+        _server.Stop(true);
     }
 }

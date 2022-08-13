@@ -6,7 +6,7 @@ namespace NeoLib.network.packet;
 public class ClientAcceptedPacket : INetSerializable
 {
     private int _clientId;
-    private Dictionary<int, NetPeer> _connectedClients = new Dictionary<int, NetPeer>();
+    //private Dictionary<int, NetPeer> _connectedClients = new Dictionary<int, NetPeer>();
 
     public int ClientId
     {
@@ -14,11 +14,13 @@ public class ClientAcceptedPacket : INetSerializable
         set => _clientId = value;
     }
 
+    /*
     public Dictionary<int, NetPeer> ConnectedClients
     {
         get => _connectedClients;
         set => _connectedClients = value ?? throw new ArgumentNullException(nameof(value));
     }
+    */
 
     public void Serialize(NetDataWriter writer)
     {

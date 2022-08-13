@@ -7,7 +7,7 @@ namespace NeoLib.network.manager;
 
 public class ClientNetworkManager
 {
-    private bool _isRunning = true;
+    //private bool _isRunning = true;
     private ClientListener _listener;
     private NetManager _client;
     private const int SleepTime = 15; // 1/66~67
@@ -35,8 +35,8 @@ public class ClientNetworkManager
 
     public void Update()
     {
-        while (_isRunning)
-        {
+        //while (_isRunning)
+        //{
             /*
             var mp = new MessagePacket();
             mp.Message = "Hello from client!";
@@ -46,15 +46,16 @@ public class ClientNetworkManager
             */
             
             _client.PollEvents();
-            Thread.Sleep(SleepTime);
-        }
+            //Thread.Sleep(SleepTime);
+        //}
 
-        _client.Stop();
-        Console.WriteLine("[CLIENT] NetMan stopped!");
+        //_client.Stop();
+        //Console.WriteLine("[CLIENT] NetMan stopped!");
     }
 
     public void Stop()
     {
-        _isRunning = false;
+        //_isRunning = false;
+        _client.Stop(true);
     }
 }

@@ -19,7 +19,7 @@ public abstract class GameScreen
     public abstract void Update(float dt);
     
     // ? Not sure I need deltaTime in Render()...
-    public abstract void Render();
+    public abstract void Render(float dt);
     
     public abstract void Stop();
 
